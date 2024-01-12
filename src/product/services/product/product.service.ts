@@ -32,7 +32,15 @@ export class ProductService {
 
         const products = await this.productModel.aggregate([
             {
-                $match: criteria
+                $match: criteria,
+            },
+            {
+                $lookup: {
+                    from: 'categories',
+                    localField: 'categoryId',
+                    foreignField: '_id',
+                    as: 'categoryDetails',
+                },
             },
             {
                 $facet: {
@@ -40,11 +48,12 @@ export class ProductService {
                     paginationDocs: [
                         { $sort: { createdAt: -1 } },
                         { $skip: offset },
-                        { $limit: limit }
-                    ]
-                }
-            }
+                        { $limit: limit },
+                    ],
+                },
+            },
         ]);
+
 
         
         return products;

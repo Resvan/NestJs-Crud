@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put, Query } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put, Query } from '@nestjs/common';
 import { CreateProductDto } from 'src/product/Dtos/CreateProduct.dto';
 import { ObjectIdDto } from 'src/product/Dtos/ObjectId.dto';
 import { UpdateProductDto } from 'src/product/Dtos/UpdateProduct.dto';

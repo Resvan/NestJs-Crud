@@ -32,3 +32,15 @@ export type UpdateProduct = {
     stock: Stock
 }
 
+
+export type createCategory = {
+    title: string;
+    description: string;
+    images: Array<string>;
+}
+
+export type UpdateCategory = {
+    title: string;
+    description: string;
+    images: Array<string>;
+}
